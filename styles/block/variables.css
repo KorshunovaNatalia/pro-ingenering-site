@@ -1,0 +1,49 @@
+:root {
+    /* ===== Базовые цвета фона ===== */
+    --color-bg-light: #F3F3F3;
+    --color-bg-footer: #B8C0C6;
+    --color-bg-card: #EAECEE;
+    --color-bg-form: #fafafa;
+    --color-bg-error: #fff5f5;
+    --color-bg-hover: #e5e7eb;
+
+    /* ===== Основные цвета текста ===== */
+    --color-text-main: #06131B;
+    --color-text-blue: #4B6471;
+    --color-text-gray: #666666;
+    --color-white: #ffffff;
+
+    /* ===== Акцентные цвета ===== */
+    --color-accent: #068587;
+    --color-primary-dark: #132E40;
+    --color-error: #d32f2f;
+
+    /* ===== Цвета границ ===== */
+    --color-border-gray: #dddddd;
+    --color-border-light: #eeeeee;
+
+    --bg-hero-overlay: rgba(0, 0, 0, 0.7);
+    --bg-service-overlay: rgba(0, 0, 0, 0.5);
+    --bg-modal-overlay: rgba(0, 0, 0, 0.5);
+    --bg-lightbox-overlay: rgba(0, 0, 0, 0.85);
+
+    --shadow-header: 0 2px 4px rgba(0, 0, 0, 0.05);
+    --shadow-modal: 0 10px 25px rgba(0, 0, 0, 0.2);
+    --shadow-mobile-menu: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-btn: 0 4px 10px rgba(0, 0, 0, 0.2);
+    --shadow-btn-hover: 0 6px 15px rgba(0, 0, 0, 0.3);
+    --shadow-license: 0 4px 6px rgba(0, 0, 0, 0.05);
+    --shadow-lightbox: 0 10px 30px rgba(0, 0, 0, 0.5);
+
+    --font-family-primary: 'Montserrat', 'Arial', sans-serif;
+
+    --fw-regular: 400;
+    --fw-bold: 600;
+
+    --radius-sm: 4px;
+    --radius-md: 6px;
+    --radius-lg: 8px;
+
+    --spacing-between-blocks: 60px;
+    --spacing-title-to-block: 40px;
+}

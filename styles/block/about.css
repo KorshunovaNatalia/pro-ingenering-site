@@ -1,0 +1,214 @@
+/* ============================================================
+   СТРАНИЦА "О НАС" (ABOUT)
+   ============================================================ */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    background: transparent;
+    padding: 0;
+}
+
+.about-grid__block {
+    background: var(--color-bg-card);
+    padding: 40px;
+    border-radius: var(--radius-lg);
+}
+
+.about-grid__block h3,
+.about-grid__block--right h3 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.about-grid__block p {
+    text-align: justify;
+    text-align-last: left;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.about-grid__block--right {
+    padding: 0;
+}
+
+.about-grid__list-item {
+    background: var(--color-bg-card);
+    padding: 20px 40px 20px;
+    margin-bottom: 20px;
+    border-radius: var(--radius-md);
+    text-align: justify;
+    text-align-last: left;
+}
+
+.about-grid__list-item strong {
+    font-weight: var(--fw-bold);
+}
+
+.license-section {
+    margin-top: var(--spacing-between-blocks);
+}
+
+.license-slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.license-slider__track {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.4s ease-in-out;
+    width: 100%;
+    scroll-behavior: smooth;
+}
+
+.license-slider__slide {
+    flex: 1 1 calc(25% - 20px);
+    max-width: calc(25% - 20px);
+    cursor: pointer;
+    transition: transform 0.2s;
+    aspect-ratio: 3 / 4;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    border: 1px solid var(--color-border-gray);
+    box-shadow: var(--shadow-license);
+}
+
+.license-slider__slide:hover {
+    transform: scale(1.02);
+}
+
+.license-slider__img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.license-slider__btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background: var(--color-bg-light);
+    border: 1px solid var(--color-bg-footer);
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: all 0.5s;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.license-slider__btn:hover {
+    background: var(--color-bg-light);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.license-slider__btn:active {
+    transform: translateY(-50%) scale(0.9);
+}
+
+.license-slider__btn::before {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 0px;
+    right: 0;
+    bottom: 0;
+    mask-image: url('/public/icons/arrow-down.svg');
+    -webkit-mask-image: url('/public/icons/arrow-down.svg');
+    mask-size: 34px 34px;
+    -webkit-mask-size: 34px 34px;
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+    mask-position: center;
+    -webkit-mask-position: center;
+    background-color: var(--color-accent);
+}
+
+.license-slider__btn--left {
+    left: 10px;
+    transform: translateY(-50%) rotate(90deg);
+}
+
+.license-slider__btn--right {
+    right: 10px;
+    transform: translateY(-50%) rotate(-90deg);
+}
+
+.license-slider__btn--hidden {
+    display: none;
+}
+
+/* ============================================================
+   АДАПТИВНОСТЬ
+   ============================================================ */
+@media (max-width: 1400px) {
+    .about-grid{
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 1024px) {
+    .about-grid__block h3,
+    .about-grid__block--right h3 {
+        font-size: 20px;
+    }
+
+    .about-grid__block p {
+        font-size: 16px;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .license-slider__slide {
+        flex: 1 0 calc(50% - 10px);
+        max-width: calc(50% - 10px);
+    }
+
+    .license-slider {
+        padding: 0 60px;
+    }
+
+    .license-slider__btn {
+        display: flex;
+    }
+
+    .license-slider__btn--hidden {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-grid__block {
+        padding: 20px;
+    }
+
+    .about-grid__list-item {
+        padding: 20px;
+    }
+
+    .about-grid__block h3,
+    .about-grid__block--right h3 {
+        font-size: 20px;
+    }
+
+    .about-grid__block p {
+        font-size: 16px;
+    }
+
+    .license-slider__slide {
+        flex: 1 0 100%;
+        max-width: 100%;
+    }
+
+    .license-slider {
+        padding: 0 45px;
+    }
+}
