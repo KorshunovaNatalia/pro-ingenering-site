@@ -179,8 +179,8 @@ ul {
     display: inline-block;
     width: 24px;
     height: 24px;
-    mask-image: url('/public/icons/arrow-left.svg');
-    -webkit-mask-image: url('/public/icons/arrow-left.svg');
+    mask-image: url('../../public/icons/arrow-left.svg');
+    -webkit-mask-image: url('../../public/icons/arrow-left.svg');
     mask-size: contain;
     mask-repeat: no-repeat;
     background-color: var(--color-white);
@@ -205,8 +205,8 @@ ul {
     width: 24px;
     height: 24px;
     margin-top: 2px;
-    mask-image: url('/public/icons/arrow-right.svg');
-    -webkit-mask-image: url('/public/icons/arrow-right.svg');
+    mask-image: url('../../public/icons/arrow-right.svg');
+    -webkit-mask-image: url('../../public/icons/arrow-right.svg');
     mask-size: contain;
     mask-repeat: no-repeat;
     background-color: var(--color-white);
@@ -254,7 +254,7 @@ ul {
     width: auto;
     display: block;
     object-fit: contain;
-    content: url('/public/CompanyLogo.svg');
+    content: url('../../public/CompanyLogo.svg');
 }
 
 .nav {
@@ -676,8 +676,8 @@ input[type="number"]::-webkit-outer-spin-button {
     justify-content: center;
     width: 24px;
     height: 24px;
-    mask-image: url('/public/icons/arrow-down.svg');
-    -webkit-mask-image: url('/public/icons/arrow-down.svg');
+    mask-image: url('../../public/icons/arrow-down.svg');
+    -webkit-mask-image: url('../../public/icons/arrow-down.svg');
     mask-size: contain;
     mask-repeat: no-repeat;
     background-color: var(--color-white);
@@ -809,7 +809,7 @@ input[type="number"]::-webkit-outer-spin-button {
 
     .header__logo-img {
         height: 44px;
-        content: url('/public/CompanyLogoMobile.svg');
+        content: url('../../public/CompanyLogoMobile.svg');
     }
 
     .header__burger {
