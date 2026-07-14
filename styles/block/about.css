@@ -119,8 +119,8 @@
     left: 0px;
     right: 0;
     bottom: 0;
-    mask-image: url('/public/icons/arrow-down.svg');
-    -webkit-mask-image: url('/public/icons/arrow-down.svg');
+    mask-image: url('../../public/icons/arrow-down.svg');
+    -webkit-mask-image: url('../../public/icons/arrow-down.svg');
     mask-size: 34px 34px;
     -webkit-mask-size: 34px 34px;
     mask-repeat: no-repeat;
