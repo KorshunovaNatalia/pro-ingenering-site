@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ====== ЛОГОТИП САЙТА ====== -->
+    <link rel="icon" type="image/png" sizes="16x16" href="/public/CompanyLogoMobile.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/public/CompanyLogoMobile.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/public/CompanyLogoMobile.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/public/CompanyLogoMobile.png">
+    <meta name="theme-color" content="#F3F3F3">
+
+    <title id="pageTitle">Про-Инженеринг — Инженерные решения для предприятий B2B</title>
+    <meta name="description" id="pageDescription" content="Проектирование, монтаж и обслуживание инженерных систем. Лицензии МЧС и Ростехнадзора. 8+ лет опыта.">
+
+    <!-- Open Graph мета-теги для соцсетей -->
+    <meta property="og:title" id="ogTitle" content="Про-Инженеринг — Инженерные решения для предприятий B2B">
+    <meta property="og:description" id="ogDescription" content="Проектирование, монтаж и обслуживание инженерных систем. Лицензии МЧС и Ростехнадзора. 8+ лет опыта.">
+    <meta property="og:image" content="https://вашсайт.ru/public/CompanyLogoOg.png">
+    <meta property="og:url" content="https://вашсайт.ru/">
+    <meta property="og:type" content="website">
+
+    <!-- Schema.org разметка для поисковиков -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "ООО «Про-Инженеринг»",
+      "legalName": "Общество с ограниченной ответственностью «Про-Инженеринг»",
+      "description": "Инженерно-строительная компания. Проектирование, монтаж, обслуживание инженерных систем.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "ул. Красные Горки, д. 39, помещ. 6П",
+        "addressLocality": "Тверь",
+        "postalCode": "170100",
+        "addressCountry": "RU"
+      },
+      "url": "https://вашсайт.ru/",
+      "logo": "https://вашсайт.ru/public/CompanyLogo.svg",
+      "openingHours": "Mo-Fr 09:00-18:00"
+    }
+    </script>
+
+    <link rel="stylesheet" href="./styles/main.css">
+
+    <!--aee2568a-74cb-45b0-93c7-d593512e7383-->
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=aee2568a-74cb-45b0-93c7-d593512e7383&lang=ru_RU" type="text/javascript"></script>
+</head>
+<body>
+
+    <!-- ШАПКА САЙТА -->
+    <header class="header" id="mainHeader">
+        <div class="container header__inner">
+            <a href="#" class="header__logo-link" onclick="goToHome(event)">
+                <div class="header__logo-img"></div>
+            </a>
+            <button class="header__burger" onclick="toggleMenu()" aria-label="Открыть меню навигации" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="nav">
+                <a href="#" class="nav__link" onclick="showPage('home')">Главная</a>
+                <a href="#" class="nav__link" onclick="showPage('about')">О нас</a>
+                <a href="#" class="nav__link" onclick="showPage('services')">Услуги</a>
+                <a href="#" class="nav__link" onclick="showPage('contacts')">Контакты</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ОСНОВНОЙ КОНТЕНТ -->
+    <main class="content-wrapper">
+        
+        <!-- ГЛАВНАЯ СТРАНИЦА -->
+        <section id="home" class="page active">
+            <div class="hero">
+                <div class="container hero__content">
+                    <h1>Комплексные инженерные решения для предприятий (B2B)</h1>
+                    <p>Проектирование, монтаж и обслуживание инженерных систем для промышленных, коммерческих и государственных объектов. Работа с корпоративными заказчиками.</p>
+                    <button class="btn btn-primary" onclick="showPage('about')">Подробнее о компании</button>
+                </div>
+            </div>
+
+            <div class="container">
+                <!-- Преимущества компании -->
+                <div class="advantages advantages-grid">
+                    <div class="card">
+                        <div class="card__icon-wrapper">
+                            <img src="/public/icons/IconExperience.svg" alt="Иконка: 8+ лет опыта в инженерных системах" class="card__icon" loading="lazy">
+                        </div>
+                        <div>
+                            <h3>8+ лет опыта</h3>
+                            <p>Реализуем инженерные проекты с 2017 года для предприятий и организаций различных отраслей.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card__icon-wrapper">
+                            <img src="/public/icons/IconMap.svg" alt="Иконка: работа в 10 регионах России" class="card__icon" loading="lazy">
+                        </div>
+                        <div>
+                            <h3>10 субъектов РФ</h3>
+                            <p>Выполнены проекты на объектах промышленного, коммерческого, энергетического и государственного назначения.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card__icon-wrapper">
+                            <img src="/public/icons/IconCucle.svg" alt="Иконка: полный цикл работ от проектирования до обслуживания" class="card__icon" loading="lazy">
+                        </div>
+                        <div>
+                            <h3>Полный комплекс инженерных работ</h3>
+                            <p>Проектирование, поставка оборудования, монтаж, пусконаладка и техническое обслуживание инженерных систем.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card__icon-wrapper">
+                            <img src="/public/icons/IconDocument.svg" alt="Иконка: лицензии и сертификаты МЧС и Ростехнадзора" class="card__icon" loading="lazy">
+                        </div>
+                        <div>
+                            <h3>Лицензии и опыт работы на сложных объектах</h3>
+                            <p>Действующие лицензии МЧС России и Ростехнадзора, опыт работы на технически сложных объектах.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Превью услуг на главной -->
+                <h2 class="section-title">Наши услуги</h2>
+                <div class="services-preview services-grid">
+                    <div class="service-card" onclick="openServicesCategory(1)">
+                        <img src="/public/images/Services_1.jpg" alt="Современная котельная — проектирование и монтаж инженерных систем отопления" class="service-card__img" loading="lazy">
+                        <h3 class="service-card__title">Инженерные системы</h3>
+                    </div>
+                    <div class="service-card" onclick="openServicesCategory(2)">
+                        <img src="/public/images/Services_2.jpg" alt="Проектирование и монтаж систем вентиляции и кондиционирования" class="service-card__img" loading="lazy">
+                        <h3 class="service-card__title">Электромонтажные работы</h3>
+                    </div>
+                    <div class="service-card" onclick="openServicesCategory(3)">
+                        <img src="/public/images/Services_3.jpg" alt="Монтаж систем пожарной сигнализации и безопасности на объектах" class="service-card__img" loading="lazy">
+                        <h3 class="service-card__title">Системы безопасности</h3>
+                    </div>
+                    <div class="service-card" onclick="openServicesCategory(4)">
+                        <img src="/public/images/Services_4.jpg" alt="Автоматизация инженерных систем и пусконаладочные работы" class="service-card__img" loading="lazy">
+                        <h3 class="service-card__title">Проектирование и автоматизация</h3>
+                    </div>
+                </div>
+                <div class="text-center mt-40">
+                    <button class="btn btn-primary" onclick="openServicesFromHome()">Перейти ко всем услугам</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- СТРАНИЦА "О НАС" -->
+        <section id="about" class="page">
+            <div class="container">
+                <h2 class="section-title">О нас</h2>
+                <div class="about-grid">
+                    <div class="about-grid__block about-grid__block--left">
+                        <h3>ООО «Про-Инженеринг»</h3>
+                        <p>ООО «Про-Инженеринг» — инженерно-строительная компания, специализирующаяся на проектировании, монтаже, пусконаладке и техническом обслуживании инженерных систем для промышленных предприятий, коммерческих организаций и государственных учреждений.</p>
+                        <p>Компания успешно работает с 2017 года и реализует проекты различной сложности на объектах промышленного, энергетического, коммерческого и государственного назначения. За время деятельности выполнены работы в 10 субъектах Российской Федерации, что подтверждает высокий уровень компетенции и опыт реализации масштабных инженерных проектов.</p>
+                        <p>Основным направлением деятельности является создание современных инженерных систем, отвечающих требованиям надежности, безопасности и действующих нормативов. Компания сопровождает проекты на всех этапах — от разработки технических решений и подбора оборудования до ввода объекта в эксплуатацию и дальнейшего сервисного обслуживания.</p>
+                        <p>ООО «Про-Инженеринг» обладает действующими лицензиями МЧС России и Ростехнадзора, а также сертифицированной системой менеджмента качества ГОСТ Р ИСО 9001:2015, что позволяет выполнять работы на объектах повышенной ответственности и гарантировать соответствие установленным требованиям.</p>
+                    </div>
+                    <div class="about-grid__block--right">
+                        <h3>Чем занимается компания</h3>
+                        <ul class="about-grid__list">
+                            <li class="about-grid__list-item"><strong>Инженерные системы</strong><br>Проектирование, монтаж и обслуживание инженерных коммуникаций для промышленных, коммерческих и государственных объектов, включая системы электроснабжения, отопления, водоснабжения, вентиляции и кондиционирования.</li>
+                            <li class="about-grid__list-item"><strong>Электромонтажные работы</strong><br>Выполнение полного комплекса электромонтажных работ: прокладка кабельных линий, монтаж электрооборудования, силовых сетей, наружного и внутреннего освещения, систем заземления и молниезащиты.</li>
+                            <li class="about-grid__list-item"><strong>Системы безопасности</strong><br>Проектирование, монтаж и техническое обслуживание систем пожарной безопасности, видеонаблюдения, охранной сигнализации, контроля доступа, домофонии и других слаботочных систем.</li>
+                            <li class="about-grid__list-item"><strong>Проектирование и автоматизация</strong><br>Разработка проектных решений, подбор оборудования, автоматизация инженерных систем, выполнение пусконаладочных работ и техническое сопровождение проектов.</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Слайдер лицензий и сертификатов -->
+                <div class="license-section">
+                    <h3 class="section-title mt-60">Лицензии и сертификаты</h3>
+                    <div class="license-slider" id="licenseSliderWrapper">
+                        <div class="license-slider__track" id="licenseTrack">
+                            <!--<div class="license-slider__slide">
+                                <img src="" alt="" class="license-slider__img" loading="lazy">
+                            </div>-->
+                            <div class="license-slider__slide">
+                                <img src="/public/images/License_2.png" alt="Лицензия Ростехнадзора № ВО-(У)-03-101-4501 от 01 ноября 2025 года на эксплуатацию ядерных установок Калининской атомной станции." class="license-slider__img" loading="lazy">
+                            </div>
+                            <div class="license-slider__slide">
+                                <img src="/public/images/License_3.png" alt="Лицензия МЧС России № 69-Б/00138 от 26 мая 2017 года на деятельность по монтажу, техническому обслуживанию и ремонту средств обеспечения пожарной безопасности. Включает системы пожаротушения, пожарной сигнализации, противопожарного водоснабжения, дымоудаления, противодымной вентиляции, оповещения и эвакуации при пожаре, фотолюминесцентные эвакуационные системы, противопожарные занавесы и завесы, заполнения проемов в противопожарных преградах, огнезащиту конструкций." class="license-slider__img" loading="lazy">
+                            </div>
+                            <div class="license-slider__slide">
+                                <img src="/public/images/Certificate_4.png" alt="Сертификат соответствия № ST.RU.0001.B0000899 от 21 февраля 2025 года. Система менеджмента качества ООО «Про-Инженеринг» соответствует требованиям ГОСТ Р ИСО 9001-2015 (ISO 9001:2015)." class="license-slider__img" loading="lazy">
+                            </div>
+                        </div>
+                        <button class="license-slider__btn license-slider__btn--left license-slider__btn--hidden" id="licenseLeftBtn" onclick="licenseSlide(-1)" aria-label="Предыдущий слайд"></button>
+                        <button class="license-slider__btn license-slider__btn--right" id="licenseRightBtn" onclick="licenseSlide(1)" aria-label="Следующий слайд"></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- СТРАНИЦА "УСЛУГИ" -->
+        <section id="services" class="page">
+            <div class="container">
+                <!-- Хлебные крошки (скрыты по умолчанию, появляются при переходе с главной) -->
+                <div class="breadcrumbs" id="servicesBreadcrumbs" style="display:none;">
+                    <span onclick="showPage('home')">Главная</span> / <span>Услуги</span>
+                </div>
+                <h2 class="section-title section-title--services">Услуги</h2>
+                <!-- Аккордеон с категориями услуг -->
+                <div class="accordion" id="servicesAccordion">
+                    <div class="accordion__item">
+                        <div class="accordion__header" onclick="toggleAccordion(this)">
+                            <div class="accordion__arrow-wrapper">
+                                <span class="accordion__arrow"></span>
+                            </div>
+                            <h3 class="accordion__title">Инженерные системы</h3>
+                        </div>
+                        <div class="accordion__body">
+                            <div class="accordion__grid">
+                                <div class="accordion__link" onclick="openServicePage('1-1', 'Электроснабжение')">Электроснабжение</div>
+                                <div class="accordion__link" onclick="openServicePage('1-2', 'Отопление и теплоснабжение')">Отопление и теплоснабжение</div>
+                                <div class="accordion__link" onclick="openServicePage('1-3', 'Водоснабжение')">Водоснабжение</div>
+                                <div class="accordion__link" onclick="openServicePage('1-4', 'Канализация')">Канализация</div>
+                                <div class="accordion__link" onclick="openServicePage('1-5', 'Вентиляция')">Вентиляция</div>
+                                <div class="accordion__link" onclick="openServicePage('1-6', 'Кондиционирование')">Кондиционирование</div>
+                                <div class="accordion__link" onclick="openServicePage('1-7', 'Наружное освещение')">Наружное освещение</div>
+                                <div class="accordion__link" onclick="openServicePage('1-8', 'Сети связи')">Сети связи (внутренние и наружные в одной услуге)</div>
+                                <div class="accordion__link" onclick="openServicePage('1-9', 'Инженерные коммуникации')">Инженерные коммуникации (включая подключение к существующим сетям и монтаж коммуникаций)</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion__item">
+                        <div class="accordion__header" onclick="toggleAccordion(this)">
+                            <div class="accordion__arrow-wrapper">
+                                <span class="accordion__arrow"></span>
+                            </div>
+                            <h3 class="accordion__title">Электромонтажные работы</h3>
+                        </div>
+                        <div class="accordion__body">
+                            <div class="accordion__grid">
+                                <div class="accordion__link" onclick="openServicePage('2-1', 'Прокладка кабельных линий')">Прокладка кабельных линий</div>
+                                <div class="accordion__link" onclick="openServicePage('2-2', 'Монтаж электрооборудования')">Монтаж электрооборудования</div>
+                                <div class="accordion__link" onclick="openServicePage('2-3', 'Монтаж силовых сетей')">Монтаж силовых электрических сетей</div>
+                                <div class="accordion__link" onclick="openServicePage('2-4', 'Монтаж внутреннего и наружного освещения')">Монтаж наружного и внутреннего освещения</div>
+                                <div class="accordion__link" onclick="openServicePage('2-5', 'Монтаж шинопроводов')">Монтаж шинопроводов</div>
+                                <div class="accordion__link" onclick="openServicePage('2-6', 'Монтаж молниезащиты и заземления')">Монтаж систем молниезащиты и заземления</div>
+                                <div class="accordion__link" onclick="openServicePage('2-7', 'Ремонт и модернизация')">Ремонт и модернизация систем электроснабжения</div>
+                                <div class="accordion__link" onclick="openServicePage('2-8', 'Аварийные работы')">Аварийные электромонтажные работы</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion__item">
+                        <div class="accordion__header" onclick="toggleAccordion(this)">
+                            <div class="accordion__arrow-wrapper">
+                                <span class="accordion__arrow"></span>
+                            </div>
+                            <h3 class="accordion__title">Системы безопасности</h3>
+                        </div>
+                        <div class="accordion__body">
+                            <div class="accordion__grid">
+                                <div class="accordion__link" onclick="openServicePage('3-1', 'Монтаж пожарной сигнализации')">Монтаж систем пожарной сигнализации</div>
+                                <div class="accordion__link" onclick="openServicePage('3-2', 'Обслуживание пожарной сигнализации')">Техническое обслуживание систем пожарной сигнализации</div>
+                                <div class="accordion__link" onclick="openServicePage('3-3', 'Монтаж пожаротушения')">Монтаж систем пожаротушения</div>
+                                <div class="accordion__link" onclick="openServicePage('3-4', 'Обслуживание пожаротушения')">Техническое обслуживание систем пожаротушения</div>
+                                <div class="accordion__link" onclick="openServicePage('3-5', 'Монтаж дымоудаления')">Монтаж систем дымоудаления</div>
+                                <div class="accordion__link" onclick="openServicePage('3-6', 'Монтаж СОУЭ')">Монтаж систем оповещения и управления эвакуацией (СОУЭ)</div>
+                                <div class="accordion__link" onclick="openServicePage('3-7', 'Противопожарное водоснабжение')">Монтаж противопожарного водоснабжения</div>
+                                <div class="accordion__link" onclick="openServicePage('3-8', 'Огнезащита конструкций')">Огнезащитная обработка конструкций</div>
+                                <div class="accordion__link" onclick="openServicePage('3-9', 'Противопожарные преграды')">Монтаж противопожарных преград</div>
+                                <div class="accordion__link" onclick="openServicePage('3-10', 'Монтаж видеонаблюдения')">Монтаж систем видеонаблюдения</div>
+                                <div class="accordion__link" onclick="openServicePage('3-11', 'Монтаж охранной сигнализации')">Монтаж охранной сигнализации</div>
+                                <div class="accordion__link" onclick="openServicePage('3-12', 'Монтаж СКУД')">Монтаж систем контроля и управления доступом (СКУД)</div>
+                                <div class="accordion__link" onclick="openServicePage('3-13', 'Домофоны и шлагбаумы')">Монтаж домофонов, турникетов, шлагбаумов и автоматических ворот</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion__item">
+                        <div class="accordion__header" onclick="toggleAccordion(this)">
+                            <div class="accordion__arrow-wrapper">
+                                <span class="accordion__arrow"></span>
+                            </div>
+                            <h3 class="accordion__title">Проектирование и автоматизация</h3>
+                        </div>
+                        <div class="accordion__body">
+                            <div class="accordion__grid">
+                                <div class="accordion__link" onclick="openServicePage('4-1', 'Проектирование инженерных систем')">Проектирование инженерных систем</div>
+                                <div class="accordion__link" onclick="openServicePage('4-2', 'Автоматизация инженерных систем')">Автоматизация инженерных систем</div>
+                                <div class="accordion__link" onclick="openServicePage('4-3', 'Комплексные пусконаладочные работы')">Комплексные пусконаладочные работы</div>
+                                <div class="accordion__link" onclick="openServicePage('4-4', 'Подбор оборудования')">Подбор инженерного и электротехнического оборудования</div>
+                                <div class="accordion__link" onclick="openServicePage('4-5', 'Нестандартные инженерные решения')">Разработка нестандартных инженерных решений</div>
+                                <div class="accordion__link" onclick="openServicePage('4-6', 'Техническое сопровождение')">Техническое сопровождение проектов</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- СТРАНИЦА ДЕТАЛЬНОГО ОПИСАНИЯ УСЛУГИ -->
+        <section id="service-page" class="page">
+            <div class="container">
+                <div class="breadcrumbs" id="serviceBreadcrumbs">
+                    <span onclick="showPage('home')">Главная</span> / 
+                    <span onclick="showPage('services')">Услуги</span> / 
+                    <span id="currentServiceName">Название услуги</span>
+                </div>
+                <div id="serviceContent" class="service-detail">
+                    <!-- Контент подгружается через JS -->
+                </div>
+                <button class="btn btn-secondary btn--back" onclick="goToServicesFromBreadcrumb()">Назад к услугам</button>
+            </div>
+        </section>
+
+        <!-- СТРАНИЦА "КОНТАКТЫ" -->
+        <section id="contacts" class="page">
+            <div class="container">
+                <h2 class="section-title">Контакты</h2>
+                <div class="contacts-grid">
+                    <!-- Форма обратной связи -->
+                    <div class="contacts-grid__info" id="contactColLeft">
+                        <h3>Свяжитесь с нами</h3>
+                        <p>Если у вас есть задача, связанная с проектированием, монтажом, модернизацией или техническим обслуживанием инженерных систем, оставьте заявку.</p>
+
+                        <form id="contactPageForm" onsubmit="submitContactForm(event)">
+                            <div class="form__group">
+                                <label>ИНН организации</label>
+                                <input type="text" id="inn" placeholder="Введите ИНН" maxlength="12" oninput="validateInn(this)">
+                                <span class="form__error" id="innError">Только цифры</span>
+                            </div>
+                            <div class="form__group">
+                                <label>ФИО <span class="form__required">*</span></label>
+                                <input type="text" id="fio" placeholder="Введите ваше ФИО" required oninput="validateName(this)">
+                                <span class="form__error" id="fioError">Только буквы</span>
+                            </div>
+                            <div class="form__group">
+                                <label>Должность <span class="form__required">*</span></label>
+                                <input type="text" id="position" placeholder="Введите вашу должность" required>
+                                <span class="form__error" id="posError">Обязательное поле</span>
+                            </div>
+                            
+                            <div class="form__checkbox form__checkbox--align">
+                                <input type="checkbox" id="agree" required>
+                                <label for="agree">
+                                    Я ознакомлен(а) с 
+                                    <a href="#" class="form__policy-link" onclick="closeModalDirect('formModal'); showPage('privacy'); return false;">Политикой конфиденциальности</a> 
+                                    и даю согласие на обработку персональных данных.
+                                </label>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-full-width-mt-15">Отправить заявку</button>
+                        </form>
+
+                        <div class="contacts-grid__additional">
+                            <div class="contacts-grid__info-item contacts-grid__info-item--vertical">
+                                <span class="contacts-grid__label">Наш офис:</span>
+                                <span>170100, г. Тверь, ул. Красные Горки, д. 39, помещ. 6П.</span>
+                            </div>
+                            <div class="contacts-grid__info-item contacts-grid__info-item--mt">
+                                <span class="contacts-grid__label">Режим работы:</span>
+                                <span>Понедельник – пятница, 09:00 – 18:00</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Карта (временная заглушка) -->
+                    <div class="contacts-grid__map">
+                        <div id="map" class="contacts-grid__map-container"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- СТРАНИЦА 404 -->
+        <section id="error404" class="page">
+            <div class="container error-page">
+                <h1 class="error-page__title">404</h1>
+                <h2 class="error-page__subtitle">Страница не найдена</h2>
+                <p class="error-page__desc">Возможно, страница была удалена, перемещена или вы перешли по неверной ссылке.</p>
+                <div class="error-page__buttons">
+                    <button class="btn btn-primary" onclick="showPage('home')">Вернуться на главную</button>
+                    <button class="btn btn-secondary" onclick="showPage('services')">Перейти к услугам</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- СТРАНИЦА "ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ" -->
+        <section id="privacy" class="page">
+            <div class="container text-content">
+                <button class="btn btn-secondary btn--back btn--privacy" onclick="showPage('home')">На главную</button>
+                <h2 class="section-title section-title--services">Политика конфиденциальности</h2>
+                
+                <h3>1. Общие положения</h3>
+                <p>Настоящая Политика конфиденциальности определяет порядок обработки и защиты персональных данных пользователей сайта ООО «Про-Инженеринг» (далее — Оператор).</p>
+                <p>Политика разработана в соответствии с требованиями Федерального закона Российской Федерации от 27.07.2006 № 152-ФЗ «О персональных данных» и применяется ко всей информации, которую Оператор получает от пользователей посредством сайта.</p>
+                <p>Использование сайта и отправка формы обратной связи означает согласие пользователя с настоящей Политикой.</p>
+                
+                <h3>2. Оператор персональных данных</h3>
+                <p><strong>Наименование:</strong> Общество с ограниченной ответственностью «Про-Инженеринг» (ООО «Про-Инженеринг»)<br>
+                <strong>ИНН:</strong> 6950202817<br>
+                <strong>ОГРН:</strong> 1176952001632<br>
+                <strong>Юридический адрес:</strong> 170100, г. Тверь, ул. Красные Горки, д. 39, помещ. 6П.<br>
+                <strong>Телефон:</strong> +7 (4822) 22-22-69 / +7 (920) 154-88-19<br>
+                <strong>E-mail:</strong> pro-ingenering@yandex.ru</p>
+                
+                <h3>3. Какие персональные данные обрабатываются</h3>
+                <p>При использовании сайта Оператор может обрабатывать следующие персональные данные, предоставляемые пользователем добровольно:</p>
+                <ul class="policy-list">
+                    <li>фамилия, имя и отчество (поле «ФИО»);</li>
+                    <li>должность (поле «Должность»);</li>
+                    <li>ИНН организации (поле «ИНН» — по желанию пользователя).</li>
+                </ul>
+                <p>Иные персональные данные пользователем через сайт не предоставляются.</p>
+                <p>На сайте используется встроенный сервис Яндекс.Карты для отображения местоположения офиса. Обработка технических данных при использовании данного сервиса осуществляется в соответствии с <a href="https://yandex.ru/legal/confidential/" target="_blank">Политикой конфиденциальности Яндекса</a>. Оператор не осуществляет сбор и обработку данных через сервис Яндекс.Карты.</p>
+                
+                <h3>4. Цели обработки персональных данных</h3>
+                <p>Персональные данные обрабатываются исключительно в следующих целях:</p>
+                <ul class="policy-list">
+                    <li>обработка поступившей заявки;</li>
+                    <li>идентификация представителя организации;</li>
+                    <li>рассмотрение обращения;</li>
+                    <li>подготовка ответа пользователю;</li>
+                    <li>последующее взаимодействие по вопросам оказания услуг.</li>
+                </ul>
+                <p>Персональные данные не используются для рассылки рекламы или передачи третьим лицам в маркетинговых целях.</p>
+                
+                <h3>5. Правовые основания обработки персональных данных</h3>
+                <p>Обработка персональных данных осуществляется на основании:</p>
+                <ul class="policy-list">
+                    <li>Федерального закона № 152-ФЗ «О персональных данных»;</li>
+                    <li>добровольного согласия пользователя, выраженного посредством отправки формы на сайте.</li>
+                </ul>
+                
+                <h3>6. Порядок обработки и хранения персональных данных</h3>
+                <p>Персональные данные обрабатываются с использованием автоматизированных и неавтоматизированных средств. Оператор принимает необходимые организационные и технические меры для защиты персональных данных от неправомерного доступа, уничтожения, изменения, блокирования, копирования и распространения. Доступ к персональным данным предоставляется только уполномоченным сотрудникам Оператора.</p>
+                
+                <h3>7. Передача персональных данных третьим лицам</h3>
+                <p>Оператор не передает персональные данные третьим лицам.</p>
+                
+                <h3>8. Права пользователя</h3>
+                <p>Пользователь имеет право:</p>
+                <ul class="policy-list-indent">
+                    <li>получать информацию об обработке своих персональных данных;</li>
+                    <li>требовать уточнения, изменения или удаления своих персональных данных;</li>
+                    <li>отозвать согласие на обработку персональных данных.</li>
+                </ul>
+                
+                <h3>9. Согласие пользователя</h3>
+                <p>Отправляя заявку через форму на сайте, пользователь подтверждает, что:</p>
+                <ul class="policy-list-indent">
+                    <li>ознакомился с настоящей Политикой конфиденциальности;</li>
+                    <li>дает согласие на обработку своих персональных данных;</li>
+                    <li>подтверждает достоверность предоставленных сведений.</li>
+                </ul>
+                <p>Пользователь вправе в любой момент отозвать согласие на обработку персональных данных путем направления соответствующего обращения по адресу электронной почты Оператора, указанному в разделе 2 настоящей Политики.</p>
+                
+                <h3>10. Изменение Политики конфиденциальности</h3>
+                <p>Оператор вправе вносить изменения в настоящую Политику конфиденциальности без предварительного уведомления пользователей. Актуальная редакция Политики всегда размещается на данной странице сайта.</p>
+                
+                <p><em>Дата последнего обновления Политики: «___» 2026 г.</em></p>
+            </div>
+        </section>
+    </main>
+
+    <!-- КНОПКА "НАВЕРХ" -->
+    <button id="scrollTopBtn" class="scroll-top" onclick="scrollToTop(event)" aria-label="Вернуться наверх">
+        <span class="scroll-top__arrow"></span>
+    </button>
+
+    <!-- ПОДВАЛ -->
+    <footer class="footer">
+        <div class="container footer__inner">
+            <div class="footer__col footer__col--left">
+                <div class="footer__links">
+                    <a href="#" onclick="showPage('privacy')" class="footer__link--underline">Политика конфиденциальности</a>
+                    <span class="footer__divider">|</span>
+                    <span class="footer__copyright">© 2026 Про-Инженеринг</span>
+                </div>
+            </div>
+            <div class="footer__col footer__col--right">
+                <button class="btn btn-primary" onclick="openModal('formModal')">Оставить заявку</button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- МОДАЛКА "ОСТАВИТЬ ЗАЯВКУ" -->
+    <div id="formModal" class="modal" onclick="closeModal(event)">
+        <div class="modal__content" onclick="event.stopPropagation()">
+            <span class="modal__close" onclick="closeModalDirect('formModal')" aria-label="Закрыть окно">×</span>
+            <h2>Оставить заявку</h2>
+            <form id="applicationForm" onsubmit="submitApplication(event)">
+                <div class="form__group">
+                    <label>ИНН организации</label>
+                    <input type="text" name="inn" placeholder="Введите ИНН" maxlength="12" oninput="validateInn(this)">
+                    <span class="form__error">Только цифры</span>
+                </div>
+                <div class="form__group">
+                    <label>ФИО <span class="form__required">*</span></label>
+                    <input type="text" name="fio" placeholder="Введите ваше ФИО" required oninput="validateName(this)">
+                    <span class="form__error">Только буквы</span>
+                </div>
+                <div class="form__group">
+                    <label>Должность <span class="form__required">*</span></label>
+                    <input type="text" name="position" placeholder="Введите вашу должность" required>
+                    <span class="form__error">Обязательное поле</span>
+                </div>
+                <div class="form__checkbox form__checkbox--align">
+                    <input type="checkbox" id="agreeModal" required>
+                    <label for="agreeModal">
+                        Я ознакомлен(а) с 
+                        <a href="#" class="form__policy-link" onclick="closeModalDirect('formModal'); showPage('privacy'); return false;">Политикой конфиденциальности</a> 
+                        и даю согласие на обработку персональных данных.
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full-width-mt">Отправить</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- МОДАЛКА ПОСЛЕ ОТПРАВКИ ЗАЯВКИ -->
+    <div id="contactsModal" class="modal" onclick="closeModal(event)">
+        <div class="modal__content" onclick="event.stopPropagation()">
+            <span class="modal__close" onclick="closeModalDirect('contactsModal')" aria-label="Закрыть окно">×</span>
+            <div class="modal__body--center">
+                <h3 class="modal__subtitle">Спасибо!</h3>
+                <p class="modal__text">
+                    Ваша заявка успешно отправлена.
+                </p>
+                <div class="modal__divider">
+                    <p class="modal__contact-title">Для дальнейшего взаимодействия свяжитесь с нами:</p>
+                    <p class="modal__contact-item">
+                        <a href="tel:+74822222269" class="modal__contact-link">
+                            <img src="/public/icons/IconPhone.svg" alt="Иконка телефона" style="width:20px;height:20px;vertical-align:middle;margin-right:10px;" loading="lazy">+7 (4822) 22-22-69</a>
+                        <a href="tel:+79201548819" class="modal__contact-link" style="display:block; padding-left:30px;">+7 (920) 154-88-19</a>
+                    </p>
+                    <p class="modal__contact-item">
+                        <a href="mailto:pro-ingenering@yandex.ru" class="modal__contact-link">
+                            <img src="/public/icons/IconEmail.svg" alt="Иконка электронной почты" style="width:20px;height:20px;vertical-align:middle;margin-right:10px;" loading="lazy">pro-ingenering@yandex.ru</a>
+                    </p>
+                </div>
+                <button class="btn btn-primary btn-full-width-mt-25" onclick="closeModalDirect('contactsModal')">
+                    Закрыть
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- EmailJS библиотека -->
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
