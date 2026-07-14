@@ -2,7 +2,7 @@
    ГЛАВНАЯ СТРАНИЦА (HOME)
    ============================================================ */
 .hero {
-    background: url('/public/images/BannerPicture.jpg') center/cover no-repeat;
+    background: url('../../public/images/BannerPicture.jpg') center/cover no-repeat;
     position: relative;
     padding: 120px 0;
     color: var(--color-white);
