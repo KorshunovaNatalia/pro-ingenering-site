@@ -1,0 +1,120 @@
+/* ============================================================
+   СТРАНИЦА "КОНТАКТЫ"
+   ============================================================ */
+.contacts-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 40px;
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
+    margin-top: var(--spacing-title-to-block);
+    width: 100%;
+}
+
+.contacts-grid__info {
+    background: var(--color-bg-card);
+    padding: 40px;
+    border-radius: var(--radius-lg);
+    min-width: 320px;
+}
+
+.contacts-grid__info h3 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.contacts-grid__info p {
+    font-size: 18px;
+    text-align: justify;
+    text-align-last: left;
+    margin-bottom: 20px;
+}
+
+.contacts-grid__info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.info-label {
+    font-weight: var(--fw-bold);
+}
+
+.contacts-grid__additional {
+    margin-top: 40px;
+}
+
+.contacts-grid__info-item--vertical {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.contacts-grid__info-item--mt {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 15px;
+}
+
+.contacts-grid__label {
+    font-weight: bold;
+}
+
+.contacts-grid__map {
+    background: transparent;
+    border-radius: 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+.contacts-grid__map-container {
+    height: 450px;
+    width: 100%;
+    background: transparent;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+}
+
+/* ============================================================
+   АДАПТИВНОСТЬ
+   ============================================================ */
+@media (max-width: 1400px) {
+    .contacts-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 1024px) {
+    .contacts-grid__info-item {
+        font-size: 16px;
+    }
+
+    .contacts-grid__info p {
+        font-size: 16px;
+    }
+
+    .contacts-grid__info h3 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .contacts-grid__info {
+        padding: 20px;
+    }
+
+    .contacts-grid__info h3 {
+        font-size: 20px;
+        margin-bottom: 16px;
+    }
+
+    .contacts-grid__info-item {
+        gap: 5px;
+        font-size: 16px;
+    }
+
+    .contacts-grid__info p {
+        font-size: 16px;
+    }
+}

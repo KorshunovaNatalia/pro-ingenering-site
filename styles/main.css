@@ -1,0 +1,16 @@
+/* ============================================================
+   MAIN — ГЛАВНЫЙ ФАЙЛ СТИЛЕЙ
+   ============================================================ */
+
+/* 1. Переменные */
+@import url('./block/variables.css');
+
+/* 2. Общие стили */
+@import url('./block/common.css');
+
+/* 3. Стили страниц */
+@import url('./block/home.css');
+@import url('./block/about.css');
+@import url('./block/services.css');
+@import url('./block/contacts.css');
+@import url('./block/additional.css');
