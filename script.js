@@ -490,20 +490,24 @@ function setupLiveValidation() {
         innContact.addEventListener('blur', function() { validateInn(this); });
     }
 
-    const modalForms = document.querySelectorAll('#applicationForm input[type="text"]');
-    modalForms.forEach(input => {
-        const name = input.getAttribute('name') || '';
-        if (name.includes('fio')) {
-            input.addEventListener('input', function() { validateName(this); });
-            input.addEventListener('blur', function() { validateName(this); });
-        } else if (name.includes('position')) {
-            input.addEventListener('input', function() { validatePosition(this); });
-            input.addEventListener('blur', function() { validatePosition(this); });
-        } else if (name.includes('inn')) {
-            input.addEventListener('input', function() { validateInn(this); });
-            input.addEventListener('blur', function() { validateInn(this); });
-        }
-    });
+    const fioModal = document.getElementById('fioModal');
+    const posModal = document.getElementById('positionModal');
+    const innModal = document.getElementById('innModal');
+
+    if (fioModal) {
+        fioModal.addEventListener('input', function() { validateName(this); });
+        fioModal.addEventListener('blur', function() { validateName(this); });
+    }
+
+    if (posModal) {
+        posModal.addEventListener('input', function() { validatePosition(this); });
+        posModal.addEventListener('blur', function() { validatePosition(this); });
+    }
+
+    if (innModal) {
+        innModal.addEventListener('input', function() { validateInn(this); });
+        innModal.addEventListener('blur', function() { validateInn(this); });
+    }
 }
 
 
@@ -812,10 +816,9 @@ function submitContactForm(e) {
 function submitApplication(e) {
     e.preventDefault();
 
-    const form = document.getElementById('applicationForm');
-    const fio = form.querySelector('input[name="ФИО"]');
-    const position = form.querySelector('input[name="Должность"]');
-    const inn = form.querySelector('input[name="ИНН_организации"]');
+    const inn = document.getElementById('innModal');
+    const fio = document.getElementById('fioModal');
+    const position = document.getElementById('positionModal');
     const agreeModal = document.getElementById('agreeModal');
 
     if (inn) {
@@ -893,6 +896,7 @@ function submitApplication(e) {
         return;
     }
 
+    const form = document.getElementById('applicationForm');
     const submitBtn = form.querySelector('button[type="submit"]');
     const originalText = submitBtn.textContent;
     submitBtn.textContent = 'Отправка...';
