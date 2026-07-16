@@ -486,18 +486,18 @@
             <form id="applicationForm" action="https://formspree.io/f/mlgqjezw" method="POST" onsubmit="submitApplication(event)">
                 <div class="form__group">
                     <label>ИНН организации</label>
-                    <input type="text" name="ИНН" placeholder="Введите ИНН" maxlength="12" oninput="validateInn(this)">
-                    <span class="form__error">Только цифры</span>
+                    <input type="text" id="innModal" name="ИНН" placeholder="Введите ИНН" maxlength="12" oninput="validateInn(this)">
+                    <span class="form__error" id="innModalError">Только цифры</span>
                 </div>
                 <div class="form__group">
                     <label>ФИО <span class="form__required">*</span></label>
-                    <input type="text" name="ФИО" placeholder="Введите ваше ФИО" required oninput="validateName(this)">
-                    <span class="form__error">Только буквы</span>
+                    <input type="text" id="fioModal" name="ФИО" placeholder="Введите ваше ФИО" required oninput="validateName(this)">
+                    <span class="form__error" id="fioModalError">Только буквы</span>
                 </div>
                 <div class="form__group">
                     <label>Должность <span class="form__required">*</span></label>
-                    <input type="text" name="Должность" placeholder="Введите вашу должность" required>
-                    <span class="form__error">Обязательное поле</span>
+                    <input type="text" id="positionModal" name="Должность" placeholder="Введите вашу должность" required oninput="validatePosition(this)">
+                    <span class="form__error" id="positionModalError">Минимум 3 символа</span>
                 </div>
                 <div class="form__checkbox form__checkbox--align">
                     <input type="checkbox" id="agreeModal" required>
