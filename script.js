@@ -692,72 +692,122 @@ function goToServicesFromBreadcrumb() {
 /* Отправка формы на странице "Контакты" */
 function submitContactForm(e) {
     e.preventDefault();
-    if (!validateForm('contactPageForm')) return;
 
+    const inn = document.getElementById('inn');
+    const fio = document.getElementById('fio');
+    const position = document.getElementById('position');
     const agree = document.getElementById('agree');
+
+    if (!fio || fio.value.trim() === '') {
+        alert('Пожалуйста, заполните поле "ФИО".');
+        fio.focus();
+        return;
+    }
+
+    if (!position || position.value.trim() === '') {
+        alert('Пожалуйста, заполните поле "Должность".');
+        position.focus();
+        return;
+    }
+
     if (!agree || !agree.checked) {
         alert('Необходимо дать согласие на обработку персональных данных.');
         return;
     }
 
-    const PUBLIC_KEY = "zgNW0TYocAE0tZUiC";
-    const SERVICE_ID = "service_xmwaaq6";
-    const TEMPLATE_ID = "template_gzbc29r";
-
     const form = document.getElementById('contactPageForm');
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalText = submitBtn.textContent;
+    submitBtn.textContent = 'Отправка...';
+    submitBtn.disabled = true;
 
-    emailjs.init(PUBLIC_KEY);
+    const formData = new FormData(form);
 
-    // Отправка — передаём сам элемент формы
-    emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form)
-        .then(function(response) {
-            console.log('✅ Письмо отправлено!', response.status, response.text);
+    fetch('https://formspree.io/f/mlgqjezw', {
+        method: 'POST',
+        body: formData,
+        headers: {
+            'Accept': 'application/json'
+        }
+    })
+    .then(response => {
+        if (response.ok) {
             openModal('contactsModal');
-            document.getElementById('inn').value = '';
-            document.getElementById('fio').value = '';
-            document.getElementById('position').value = '';
+            form.reset();
             document.getElementById('agree').checked = false;
-        }, function(error) {
-            console.error('❌ Ошибка:', error);
-            alert('Произошла ошибка при отправке. Попробуйте позже.');
-        });
+        } else {
+            alert('Ошибка при отправке. Попробуйте позже.');
+        }
+    })
+    .catch(error => {
+        alert('Ошибка при отправке. Попробуйте позже.');
+    })
+    .finally(() => {
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+    });
 }
 
-/* Отправка формы из модалки */
+/* Отправка формы из модалки (Formspree) */
 function submitApplication(e) {
     e.preventDefault();
-    if (!validateForm('applicationForm')) return;
 
+    const form = document.getElementById('applicationForm');
+    const fio = form.querySelector('input[name="fio"]');
+    const position = form.querySelector('input[name="position"]');
     const agreeModal = document.getElementById('agreeModal');
+
+    if (!fio || fio.value.trim() === '') {
+        alert('Пожалуйста, заполните поле "ФИО".');
+        fio.focus();
+        return;
+    }
+
+    if (!position || position.value.trim() === '') {
+        alert('Пожалуйста, заполните поле "Должность".');
+        position.focus();
+        return;
+    }
+
     if (!agreeModal || !agreeModal.checked) {
         alert('Необходимо дать согласие на обработку персональных данных.');
         return;
     }
 
-    const PUBLIC_KEY = "zgNW0TYocAE0tZUiC";
-    const SERVICE_ID = "service_xmwaaq6";
-    const TEMPLATE_ID = "template_gzbc29r";
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalText = submitBtn.textContent;
+    submitBtn.textContent = 'Отправка...';
+    submitBtn.disabled = true;
 
-    // Получаем элемент формы
-    const form = document.getElementById('applicationForm');
+    closeModalDirect('formModal');
 
-    emailjs.init(PUBLIC_KEY);
+    const formData = new FormData(form);
 
-    emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form)
-        .then(function(response) {
-            console.log('✅ Письмо отправлено!', response.status, response.text);
-            closeModalDirect('formModal');
-            setTimeout(function() {
+    fetch('https://formspree.io/f/mlgqjezw', {
+        method: 'POST',
+        body: formData,
+        headers: {
+            'Accept': 'application/json'
+        }
+    })
+    .then(response => {
+        if (response.ok) {
+            setTimeout(() => {
                 openModal('contactsModal');
-                form.querySelector('input[name="inn"]').value = '';
-                form.querySelector('input[name="fio"]').value = '';
-                form.querySelector('input[name="position"]').value = '';
+                form.reset();
                 document.getElementById('agreeModal').checked = false;
             }, 300);
-        }, function(error) {
-            console.error('❌ Ошибка:', error);
-            alert('Произошла ошибка при отправке. Попробуйте позже.');
-        });
+        } else {
+            alert('Ошибка при отправке. Попробуйте позже.');
+        }
+    })
+    .catch(error => {
+        alert('Ошибка при отправке. Попробуйте позже.');
+    })
+    .finally(() => {
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+    });
 }
 
 /* Открытие модального окна */
