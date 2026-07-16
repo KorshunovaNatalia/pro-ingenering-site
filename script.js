@@ -698,20 +698,76 @@ function submitContactForm(e) {
     const position = document.getElementById('position');
     const agree = document.getElementById('agree');
 
-    if (!fio || fio.value.trim() === '') {
-        alert('Пожалуйста, заполните поле "ФИО".');
+    const innValue = inn.value.trim();
+    if (innValue.length > 0 && innValue.length !== 10 && innValue.length !== 12) {
+        inn.classList.add('error');
+        showError(inn, 'ИНН должен содержать 10 или 12 цифр');
+        inn.focus();
+        return;
+    }
+    if (innValue.length > 0 && !/^\d+$/.test(innValue)) {
+        inn.classList.add('error');
+        showError(inn, 'ИНН должен содержать только цифры');
+        inn.focus();
+        return;
+    }
+    inn.classList.remove('error');
+    hideError(inn);
+
+    const fioValue = fio.value.trim();
+    if (fioValue === '') {
+        fio.classList.add('error');
+        showError(fio, 'Заполните поле');
         fio.focus();
         return;
     }
+    const fioWords = fioValue.split(/\s+/).filter(w => w.length > 0);
+    if (fioWords.length < 2) {
+        fio.classList.add('error');
+        showError(fio, 'Введите фамилию и имя');
+        fio.focus();
+        return;
+    }
+    if (fioWords.some(w => w.length < 2)) {
+        fio.classList.add('error');
+        showError(fio, 'Каждое слово должно содержать минимум 2 буквы');
+        fio.focus();
+        return;
+    }
+    if (!/^[a-zA-Zа-яА-ЯёЁ\s\-]+$/.test(fioValue)) {
+        fio.classList.add('error');
+        showError(fio, 'Только буквы, пробелы и дефисы');
+        fio.focus();
+        return;
+    }
+    fio.classList.remove('error');
+    hideError(fio);
 
-    if (!position || position.value.trim() === '') {
-        alert('Пожалуйста, заполните поле "Должность".');
+    const posValue = position.value.trim();
+    if (posValue === '') {
+        position.classList.add('error');
+        showError(position, 'Заполните поле');
         position.focus();
         return;
     }
+    if (posValue.length < 3) {
+        position.classList.add('error');
+        showError(position, 'Минимум 3 символа');
+        position.focus();
+        return;
+    }
+    if (!/^[a-zA-Zа-яА-ЯёЁ\s\-\.\(\)]+$/.test(posValue)) {
+        position.classList.add('error');
+        showError(position, 'Некорректный ввод');
+        position.focus();
+        return;
+    }
+    position.classList.remove('error');
+    hideError(position);
 
-    if (!agree || !agree.checked) {
+    if (!agree.checked) {
         alert('Необходимо дать согласие на обработку персональных данных.');
+        agree.focus();
         return;
     }
 
@@ -726,20 +782,24 @@ function submitContactForm(e) {
     fetch('https://formspree.io/f/mlgqjezw', {
         method: 'POST',
         body: formData,
-        headers: {
-            'Accept': 'application/json'
-        }
+        headers: { 'Accept': 'application/json' }
     })
     .then(response => {
         if (response.ok) {
             openModal('contactsModal');
             form.reset();
+            document.querySelectorAll('#contactPageForm .form__group input').forEach(input => {
+                input.classList.remove('error');
+            });
+            document.querySelectorAll('#contactPageForm .form__error').forEach(el => {
+                el.style.display = 'none';
+            });
             document.getElementById('agree').checked = false;
         } else {
             alert('Ошибка при отправке. Попробуйте позже.');
         }
     })
-    .catch(error => {
+    .catch(() => {
         alert('Ошибка при отправке. Попробуйте позже.');
     })
     .finally(() => {
@@ -748,29 +808,88 @@ function submitContactForm(e) {
     });
 }
 
-/* Отправка формы из модалки (Formspree) */
+/* Отправка формы из модального окна */
 function submitApplication(e) {
     e.preventDefault();
 
     const form = document.getElementById('applicationForm');
     const fio = form.querySelector('input[name="fio"]');
     const position = form.querySelector('input[name="position"]');
+    const inn = form.querySelector('input[name="inn"]');
     const agreeModal = document.getElementById('agreeModal');
 
-    if (!fio || fio.value.trim() === '') {
-        alert('Пожалуйста, заполните поле "ФИО".');
+    const innValue = inn ? inn.value.trim() : '';
+    if (innValue.length > 0 && innValue.length !== 10 && innValue.length !== 12) {
+        inn.classList.add('error');
+        showError(inn, 'ИНН должен содержать 10 или 12 цифр');
+        inn.focus();
+        return;
+    }
+    if (innValue.length > 0 && !/^\d+$/.test(innValue)) {
+        inn.classList.add('error');
+        showError(inn, 'ИНН должен содержать только цифры');
+        inn.focus();
+        return;
+    }
+    if (inn) {
+        inn.classList.remove('error');
+        hideError(inn);
+    }
+
+    const fioValue = fio.value.trim();
+    if (fioValue === '') {
+        fio.classList.add('error');
+        showError(fio, 'Заполните поле');
         fio.focus();
         return;
     }
+    const fioWords = fioValue.split(/\s+/).filter(w => w.length > 0);
+    if (fioWords.length < 2) {
+        fio.classList.add('error');
+        showError(fio, 'Введите фамилию и имя');
+        fio.focus();
+        return;
+    }
+    if (fioWords.some(w => w.length < 2)) {
+        fio.classList.add('error');
+        showError(fio, 'Каждое слово должно содержать минимум 2 буквы');
+        fio.focus();
+        return;
+    }
+    if (!/^[a-zA-Zа-яА-ЯёЁ\s\-]+$/.test(fioValue)) {
+        fio.classList.add('error');
+        showError(fio, 'Только буквы, пробелы и дефисы');
+        fio.focus();
+        return;
+    }
+    fio.classList.remove('error');
+    hideError(fio);
 
-    if (!position || position.value.trim() === '') {
-        alert('Пожалуйста, заполните поле "Должность".');
+    const posValue = position.value.trim();
+    if (posValue === '') {
+        position.classList.add('error');
+        showError(position, 'Заполните поле');
         position.focus();
         return;
     }
+    if (posValue.length < 3) {
+        position.classList.add('error');
+        showError(position, 'Минимум 3 символа');
+        position.focus();
+        return;
+    }
+    if (!/^[a-zA-Zа-яА-ЯёЁ\s\-\.\(\)]+$/.test(posValue)) {
+        position.classList.add('error');
+        showError(position, 'Некорректный ввод');
+        position.focus();
+        return;
+    }
+    position.classList.remove('error');
+    hideError(position);
 
     if (!agreeModal || !agreeModal.checked) {
         alert('Необходимо дать согласие на обработку персональных данных.');
+        if (agreeModal) agreeModal.focus();
         return;
     }
 
@@ -786,22 +905,26 @@ function submitApplication(e) {
     fetch('https://formspree.io/f/mlgqjezw', {
         method: 'POST',
         body: formData,
-        headers: {
-            'Accept': 'application/json'
-        }
+        headers: { 'Accept': 'application/json' }
     })
     .then(response => {
         if (response.ok) {
             setTimeout(() => {
                 openModal('contactsModal');
                 form.reset();
+                document.querySelectorAll('#applicationForm .form__group input').forEach(input => {
+                    input.classList.remove('error');
+                });
+                document.querySelectorAll('#applicationForm .form__error').forEach(el => {
+                    el.style.display = 'none';
+                });
                 document.getElementById('agreeModal').checked = false;
             }, 300);
         } else {
             alert('Ошибка при отправке. Попробуйте позже.');
         }
     })
-    .catch(error => {
+    .catch(() => {
         alert('Ошибка при отправке. Попробуйте позже.');
     })
     .finally(() => {
