@@ -17,8 +17,8 @@
     <!-- Open Graph мета-теги для соцсетей -->
     <meta property="og:title" id="ogTitle" content="Про-Инженеринг — Инженерные решения для предприятий B2B">
     <meta property="og:description" id="ogDescription" content="Проектирование, монтаж и обслуживание инженерных систем. Лицензии МЧС и Ростехнадзора. 8+ лет опыта.">
-    <meta property="og:image" content=" https://korshunovanatalia.github.io/pro-ingenering-site/public/CompanyLogoOg.png">
-    <meta property="og:url" content=" https://korshunovanatalia.github.io/pro-ingenering-site/">
+    <meta property="og:image" content="https://вашсайт.ru/public/CompanyLogoOg.png">
+    <meta property="og:url" content="https://вашсайт.ru/">
     <meta property="og:type" content="website">
 
     <!-- Schema.org разметка для поисковиков -->
@@ -317,20 +317,20 @@
                         <h3>Свяжитесь с нами</h3>
                         <p>Если у вас есть задача, связанная с проектированием, монтажом, модернизацией или техническим обслуживанием инженерных систем, оставьте заявку.</p>
 
-                        <form id="contactPageForm" onsubmit="submitContactForm(event)">
+                        <form id="contactPageForm" action="https://formspree.io/f/mlgqjezw" method="POST" onsubmit="submitContactForm(event)">
                             <div class="form__group">
                                 <label>ИНН организации</label>
-                                <input type="text" id="inn" placeholder="Введите ИНН" maxlength="12" oninput="validateInn(this)">
+                                <input type="text" id="inn" name="inn" placeholder="Введите ИНН" maxlength="12" oninput="validateInn(this)">
                                 <span class="form__error" id="innError">Только цифры</span>
                             </div>
                             <div class="form__group">
                                 <label>ФИО <span class="form__required">*</span></label>
-                                <input type="text" id="fio" placeholder="Введите ваше ФИО" required oninput="validateName(this)">
+                                <input type="text" id="fio" name="fio" placeholder="Введите ваше ФИО" required oninput="validateName(this)">
                                 <span class="form__error" id="fioError">Только буквы</span>
                             </div>
                             <div class="form__group">
                                 <label>Должность <span class="form__required">*</span></label>
-                                <input type="text" id="position" placeholder="Введите вашу должность" required>
+                                <input type="text" id="position" name="position" placeholder="Введите вашу должность" required>
                                 <span class="form__error" id="posError">Обязательное поле</span>
                             </div>
                             
@@ -483,7 +483,7 @@
         <div class="modal__content" onclick="event.stopPropagation()">
             <span class="modal__close" onclick="closeModalDirect('formModal')" aria-label="Закрыть окно">×</span>
             <h2>Оставить заявку</h2>
-            <form id="applicationForm" onsubmit="submitApplication(event)">
+            <form id="applicationForm" action="https://formspree.io/f/mlgqjezw" method="POST" onsubmit="submitApplication(event)">
                 <div class="form__group">
                     <label>ИНН организации</label>
                     <input type="text" name="inn" placeholder="Введите ИНН" maxlength="12" oninput="validateInn(this)">
@@ -540,8 +540,6 @@
         </div>
     </div>
 
-    <!-- EmailJS библиотека -->
-    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
