@@ -320,17 +320,17 @@
                         <form id="contactPageForm" action="https://formspree.io/f/mlgqjezw" method="POST" onsubmit="submitContactForm(event)">
                             <div class="form__group">
                                 <label>ИНН организации</label>
-                                <input type="text" id="inn" name="inn" placeholder="Введите ИНН" maxlength="12" oninput="validateInn(this)">
+                                <input type="text" id="inn" name="ИНН" placeholder="Введите ИНН" maxlength="12" oninput="validateInn(this)">
                                 <span class="form__error" id="innError">Только цифры</span>
                             </div>
                             <div class="form__group">
                                 <label>ФИО <span class="form__required">*</span></label>
-                                <input type="text" id="fio" name="fio" placeholder="Введите ваше ФИО" required oninput="validateName(this)">
+                                <input type="text" id="fio" name="ФИО" placeholder="Введите ваше ФИО" required oninput="validateName(this)">
                                 <span class="form__error" id="fioError">Только буквы</span>
                             </div>
                             <div class="form__group">
                                 <label>Должность <span class="form__required">*</span></label>
-                                <input type="text" id="position" name="position" placeholder="Введите вашу должность" required>
+                                <input type="text" id="position" name="Должность" placeholder="Введите вашу должность" required>
                                 <span class="form__error" id="posError">Обязательное поле</span>
                             </div>
                             
@@ -486,17 +486,17 @@
             <form id="applicationForm" action="https://formspree.io/f/mlgqjezw" method="POST" onsubmit="submitApplication(event)">
                 <div class="form__group">
                     <label>ИНН организации</label>
-                    <input type="text" name="inn" placeholder="Введите ИНН" maxlength="12" oninput="validateInn(this)">
+                    <input type="text" name="ИНН" placeholder="Введите ИНН" maxlength="12" oninput="validateInn(this)">
                     <span class="form__error">Только цифры</span>
                 </div>
                 <div class="form__group">
                     <label>ФИО <span class="form__required">*</span></label>
-                    <input type="text" name="fio" placeholder="Введите ваше ФИО" required oninput="validateName(this)">
+                    <input type="text" name="ФИО" placeholder="Введите ваше ФИО" required oninput="validateName(this)">
                     <span class="form__error">Только буквы</span>
                 </div>
                 <div class="form__group">
                     <label>Должность <span class="form__required">*</span></label>
-                    <input type="text" name="position" placeholder="Введите вашу должность" required>
+                    <input type="text" name="Должность" placeholder="Введите вашу должность" required>
                     <span class="form__error">Обязательное поле</span>
                 </div>
                 <div class="form__checkbox form__checkbox--align">
