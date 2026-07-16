@@ -813,25 +813,25 @@ function submitApplication(e) {
     e.preventDefault();
 
     const form = document.getElementById('applicationForm');
-    const fio = form.querySelector('input[name="fio"]');
-    const position = form.querySelector('input[name="position"]');
-    const inn = form.querySelector('input[name="inn"]');
+    const fio = form.querySelector('input[name="ФИО"]');
+    const position = form.querySelector('input[name="Должность"]');
+    const inn = form.querySelector('input[name="ИНН_организации"]');
     const agreeModal = document.getElementById('agreeModal');
 
-    const innValue = inn ? inn.value.trim() : '';
-    if (innValue.length > 0 && innValue.length !== 10 && innValue.length !== 12) {
-        inn.classList.add('error');
-        showError(inn, 'ИНН должен содержать 10 или 12 цифр');
-        inn.focus();
-        return;
-    }
-    if (innValue.length > 0 && !/^\d+$/.test(innValue)) {
-        inn.classList.add('error');
-        showError(inn, 'ИНН должен содержать только цифры');
-        inn.focus();
-        return;
-    }
     if (inn) {
+        const innValue = inn.value.trim();
+        if (innValue.length > 0 && innValue.length !== 10 && innValue.length !== 12) {
+            inn.classList.add('error');
+            showError(inn, 'ИНН должен содержать 10 или 12 цифр');
+            inn.focus();
+            return;
+        }
+        if (innValue.length > 0 && !/^\d+$/.test(innValue)) {
+            inn.classList.add('error');
+            showError(inn, 'ИНН должен содержать только цифры');
+            inn.focus();
+            return;
+        }
         inn.classList.remove('error');
         hideError(inn);
     }
@@ -918,7 +918,9 @@ function submitApplication(e) {
                 document.querySelectorAll('#applicationForm .form__error').forEach(el => {
                     el.style.display = 'none';
                 });
-                document.getElementById('agreeModal').checked = false;
+                if (document.getElementById('agreeModal')) {
+                    document.getElementById('agreeModal').checked = false;
+                }
             }, 300);
         } else {
             alert('Ошибка при отправке. Попробуйте позже.');
