@@ -775,6 +775,104 @@ input[type="number"]::-webkit-outer-spin-button {
     .nav__link {
         font-size: 18px;
     }
+   
+    .btn,
+    .nav__link,
+    .accordion__header,
+    .accordion__link,
+    .license-slider__btn,
+    .sub-link,
+    .service-card,
+    .header__burger,
+    .scroll-top,
+    .footer__link--underline,
+    .form__policy-link,
+    .modal__close,
+    .modal__contact-link,
+    .close-btn,
+    .policy-link,
+    .breadcrumbs span:not(:last-child) {
+        -webkit-tap-highlight-color: transparent;
+        touch-action: manipulation;
+    }
+
+    .btn:active {
+        background-color: #4B6471;
+        transform: scale(0.96);
+    }
+
+    .btn-primary:active {
+        background-color: #132E40;
+    }
+
+    .btn-secondary:active {
+        background-color: #132E40;
+    }
+
+    .scroll-top:active {
+        background-color: #132E40;
+        transform: scale(0.9);
+    }
+
+    .scroll-top:active .scroll-top__arrow {
+        background-color: #ffffff;
+    }
+
+    .nav__link:active {
+        color: #068587;
+    }
+
+    .accordion__header:active {
+        background-color: #d1d5db;
+    }
+
+    .accordion__link:active {
+        background-color: #068587;
+        color: #ffffff;
+        transform: translateY(-2px);
+    }
+
+    .service-card:active {
+        transform: scale(0.97);
+    }
+
+    .header__burger:active span {
+        background-color: #068587;
+    }
+
+    .footer__link--underline:active {
+        color: #068587;
+        border-color: #068587;
+    }
+
+    .form__policy-link:active {
+        color: #068587;
+        border-color: #068587;
+    }
+
+    .policy-link:active {
+        color: #068587;
+        border-color: #068587;
+    }
+
+    .modal__contact-link:active {
+        color: #068587;
+    }
+
+    .modal__close:active {
+        color: #068587;
+        transform: scale(0.9);
+    }
+
+    .close-btn:active {
+        color: #068587;
+        transform: scale(0.9);
+    }
+
+    .breadcrumbs span:not(:last-child):active {
+        color: #068587;
+        text-decoration-color: #068587;
+    }
 }
 
 @media (max-width: 768px) {
